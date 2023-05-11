@@ -1,10 +1,11 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'maven'
+    id 'maven-publish'
 }
-group = 'com.github.jamalzahid.wavynavigation'
-version = '1.0.0'
+
+
+
 android {
     compileSdk 33
 
@@ -15,7 +16,18 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
 
+        multipleVariants {
+            withSourcesJar()
+            withJavadocJar()
+            allVariants()
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -42,4 +54,17 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = "com.github.jamalzahid.wavynavigation"
+            artifactId = "com.github.jamalzahid.wavynavigation"
+            version = "1.0.0"
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
 }
