@@ -1,0 +1,27 @@
+com.tauheed.wavybottomnavigation
+attr mbn_backgroundBottomColor
+attr mbn_circleColor
+attr mbn_countBackgroundColor
+attr mbn_countTextColor
+attr mbn_countTypeface
+attr mbn_defaultIconColor
+attr mbn_hasAnimation
+attr mbn_rippleColor
+attr mbn_selectedIconColor
+attr mbn_shadowColor
+color black
+color colorAccent
+color colorPrimary
+color colorPrimaryDark
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+id fl
+id iv
+id tv_count
+id v_circle
+layout wavy_navigation_cell
+styleable WavyBottomNavigation mbn_backgroundBottomColor mbn_circleColor mbn_countBackgroundColor mbn_countTextColor mbn_countTypeface mbn_defaultIconColor mbn_hasAnimation mbn_rippleColor mbn_selectedIconColor mbn_shadowColor
